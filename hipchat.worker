@@ -1,0 +1,15 @@
+# INPUTS:
+=begin
+hipchat:
+  api_key:
+  room:
+
+body: "MESSAGE CONTENTS"
+
+=end
+
+runtime "ruby"
+
+gem 'hipchat-api'
+
+exec 'hipchat_worker.rb'
