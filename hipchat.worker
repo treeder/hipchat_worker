@@ -1,15 +1,7 @@
-# INPUTS:
-=begin
-hipchat:
-  api_key:
-  room:
-
-body: "MESSAGE CONTENTS"
-
-=end
-
 runtime "ruby"
 
-gem 'hipchat-api'
+gemfile 'Gemfile'
 
 exec 'hipchat_worker.rb'
+
+remote

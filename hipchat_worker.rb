@@ -1,12 +1,14 @@
 require 'hipchat-api'
 
-hipchat = HipChat::API.new(params[:hipchat][:api_key])
+hipchat = HipChat::API.new(config[:hipchat][:api_key])
 
-r = hipchat.rooms_message(params[:hipchat][:room],
+# todo: parse and transform an Alert message
+
+body = params[:body] || "No body in payload!"
+r = hipchat.rooms_message(config[:hipchat][:room],
                           params[:from] || "HipChatWorker",
-                          params[:body],
+                          body,
                           true)
 
 puts "response:"
-p r
-#p r.body
+p r.body
